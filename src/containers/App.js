@@ -15,16 +15,16 @@ class App extends Component {
     this.state = {
       pageTransitions: 0,
       destination: '/',
-      redirect: false
+      redirect: false,
+      burst: false,
+      transition: false
     };
-    this.burst = React.createRef();
     this.video = React.createRef();
   }
 
   componentWillReceiveProps(prevProps) {
     if (prevProps.match.url !== undefined && this.props.match.url !== undefined) {
       if (prevProps.match.url !== this.props.match.url) {
-        console.log('here');
         this.setState({
           destination: this.props.match.url
         })
@@ -42,58 +42,86 @@ class App extends Component {
     window.removeEventListener("resize");
   }
 
+  navClick = () => {
+    this.pauseVideo();
+    this.setState({
+      burst: true,
+      transition: false
+    });
+  }
+
+  mobileClick = () => {
+    this.pauseVideo();
+    this.setState({
+      burst: false,
+      transition: true
+    })
+  }
+
+  pauseVideo = () => {
+    this.video.current.pause();
+  }
+
+  playVideo = () => {
+    this.video.current.play();
+  }
+
   render() {
     var videoOverlayText, videoOverlayHighlight, videoToUse;
     switch(this.props.match.params.paramters) {
       case "what": 
-        videoOverlayText = "What We Do";
+        videoOverlayText = "Devil’s Snare";
         videoOverlayHighlight = 
           <Fragment>
-            <span>Engineering</span> 
-            <span>Human</span> 
-            <span>Performance</span> 
+            <span>Ravenclaw</span> 
+            <span>Love</span> 
+            <span>Potion</span> 
           </Fragment>
-        videoToUse = <Video ref={this.video} video="Grasp" />
+        videoToUse = "Grasp";
         break;
       case "how":
-        videoOverlayText = "How We Do It";
+        videoOverlayText = "Pigwidgeon";
         videoOverlayHighlight = 
           <Fragment>
-            <span>Engineering</span> 
-            <span>Human</span> 
-            <span>Performance</span> 
+            <span>Knut</span> 
+            <span>Phoenix</span> 
+            <span>Feather</span> 
           </Fragment>
-        videoToUse = <Video ref={this.video} video="Rolling" />
+        videoToUse = "Rolling";
         break;
       case "huh":
-        videoOverlayText = "Where We Do It";
+        videoOverlayText = "Toad-like smile";
         videoOverlayHighlight = 
           <Fragment>
-            <span>Engineering</span> 
-            <span>Human</span> 
-            <span>Performance</span> 
+            <span>Flourish</span> 
+            <span>And</span> 
+            <span>Blotts</span> 
           </Fragment>
-        videoToUse = <Video ref={this.video} video="2-hands" />
+        videoToUse = "2-hands";
         break;
       default: 
         videoOverlayText = "We Are";
         videoOverlayHighlight = 
           <Fragment>
-            <span>Engineering</span> 
-            <span>Human</span> 
-            <span>Performance</span> 
+            <span>Peruvian</span> 
+            <span>Night</span> 
+            <span>Powder</span> 
           </Fragment>
-        videoToUse = <Video ref={this.video} video="Hand-test" />;
+        videoToUse = "Hand-test";
+    }
+    var transition;
+    if (this.state.transition) {
+      transition = <Transition key={Date.now()} />
     }
     return (
       <div className="App"> 
-        <Nav />
+        <Nav pause={this.pauseVideo} play={this.playVideo} navClick={this.navClick} mobileClick={this.mobileClick}/>
         <section className="video-overlay">
           <h4>{videoOverlayText}</h4>
           <h1>{videoOverlayHighlight}</h1>
         </section>
-        {videoToUse}
-        <Burst ref={this.burst} />
+        <Video ref={this.video} video={videoToUse} burst={this.state.burst} />
+        {transition}
       </div>
     );
   }

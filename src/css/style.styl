@@ -45,9 +45,10 @@ body {
   position: fixed;
   min-height: 100vh;
   width: 150%;
-  background: black;
+  background: body-color;
   animation-name: example;
   animation-duration: 6s;
+  z-index: 1;
   .tile {
     border:1px solid rgba(255,255,255,.255);
     height: 33%;
@@ -104,7 +105,7 @@ video { width: 50%; opacity: 0; }
 }
 .clearfix { display: inline-block; }
 .video-display > pre {
-  width: 90%;
+  width: calc(100% - 105px);
   height: 100vh;
   overflow-y: hidden;
   font-size: 8px;
@@ -397,14 +398,16 @@ video { width: 50%; opacity: 0; }
       background: white;
       margin-bottom: 10px;
       clear: left;
+      padding-left: 10px;
+      display: block;
     }
   }
 }
 
 @keyframes example {
-  0% {opacity: 1}
-  90% {opacity: 1}
-  100% {opacity: 0}
+  0% {opacity: 1; z-index: 12;}
+  90% {opacity: 1; z-index: 12;}
+  100% {opacity: 0; z-index: 1;}
 }
 @keyframes example2 {
   0% {left: 100%; margin-top: -45vw;}

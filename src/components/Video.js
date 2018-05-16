@@ -52,7 +52,7 @@ import React, {Component} from 'react';
 		if(nodeName === 'IMG') {
 			el.addEventListener('load', function(){ self.render(); });
 		} else if(nodeName === 'VIDEO') {
-			this.interval = typeof params.interval === 'number' ? params.interval : 1;
+			this.interval = typeof params.interval === 'number' ? params.interval : 15;
 			this.webrtc = !!params.webrtc;
 
 			if(this.webrtc) {
@@ -176,7 +176,8 @@ export default class Video extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			video: this.props.video
+			video: this.props.video,
+			burst: this.props.burst
 		}
 	}
 
@@ -190,9 +191,19 @@ export default class Video extends Component {
 	componentWillReceiveProps(nextProps) {
 		videoJscii.pause();
 		this.setState({
-			video: nextProps.video
+			video: nextProps.video,
+			burst: nextProps.burst
 		});
 		videoJscii.play();
+	}
+
+	componentDidUpdate() {
+		if (this.props.burst) {
+			document.getElementById("jscii-element-video").src = './videos/Transition.mp4';
+			setTimeout(() => {
+				document.getElementById("jscii-element-video").src = `./videos/${this.state.video}.mp4`;
+			}, 5000);
+		}
 	}
 
 	pause() {
@@ -213,6 +224,9 @@ export default class Video extends Component {
 	}
 
 	render() {
+		//Maybe I have to pre-load all the videos and then have only certain ones play
+		//and the el effects only certain ones.
+		//Also get rid of empty space in front of some videos
 		return (
 			<div className="video-display">
 				<video id="jscii-element-video" width="150" height="112" controls loop autoPlay muted src={`./videos/${this.state.video}.mp4`}>

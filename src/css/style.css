@@ -49,11 +49,12 @@ body {
   position: fixed;
   min-height: 100vh;
   width: 150%;
-  background: #000;
+  background: #242424;
   -webkit-animation-name: example;
           animation-name: example;
   -webkit-animation-duration: 6s;
           animation-duration: 6s;
+  z-index: 1;
 }
 .transition-display .tile {
   border: 1px solid rgba(255,255,255,0.255);
@@ -129,7 +130,7 @@ video {
   display: inline-block;
 }
 .video-display > pre {
-  width: 90%;
+  width: calc(100% - 105px);
   height: 100vh;
   overflow-y: hidden;
   font-size: 8px;
@@ -422,27 +423,35 @@ video {
   background: #fff;
   margin-bottom: 10px;
   clear: left;
+  padding-left: 10px;
+  display: block;
 }
 @-webkit-keyframes example {
   0% {
     opacity: 1;
+    z-index: 12;
   }
   90% {
     opacity: 1;
+    z-index: 12;
   }
   100% {
     opacity: 0;
+    z-index: 1;
   }
 }
 @keyframes example {
   0% {
     opacity: 1;
+    z-index: 12;
   }
   90% {
     opacity: 1;
+    z-index: 12;
   }
   100% {
     opacity: 0;
+    z-index: 1;
   }
 }
 @-webkit-keyframes example2 {
