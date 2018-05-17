@@ -20,6 +20,21 @@ body {
   color: #333;
   background: body-color;
 }
+.App, #root {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+header {
+  position:relative;
+  height: auto;
+  min-height: calc(100vh + 35px);
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
 .wrapper {
   position: absolute;
   top: 0;
@@ -45,7 +60,7 @@ body {
   position: fixed;
   min-height: 100vh;
   width: 150%;
-  background: body-color;
+  background: transparent;
   animation-name: example;
   animation-duration: 6s;
   z-index: 1;
@@ -94,7 +109,7 @@ body {
   }
 }
 
-video { width: 50%; opacity: 0; }
+video { width: 50%; opacity: 0; display: none;}
 .clearfix:after {
   content: ".";
   display: block;
@@ -108,11 +123,14 @@ video { width: 50%; opacity: 0; }
   width: calc(100% - 105px);
   height: 100vh;
   overflow-y: hidden;
+  overflow-x: hidden;
+  width: 100%;
   font-size: 8px;
   letter-spacing: 3px;
   color: pixel-main;
   clear: left;
-  position: absolute;
+  position: absolute
+  padding: 0;
   top: 0%;
   background:transparent;
   left: 0%;
@@ -134,7 +152,8 @@ video { width: 50%; opacity: 0; }
 }
 
 .navbar {
-  position: absolute;
+  position: relative;
+  padding: 0;
   top: 60px;
   background: transparent;
   z-index: 9;
@@ -290,7 +309,7 @@ video { width: 50%; opacity: 0; }
     height: 100vh;
     overflow-y: auto;
     background-color: menu;
-    z-index: 10;
+    z-index: 1;
     position: fixed;
     top: 0;
     display: block;
@@ -308,7 +327,7 @@ video { width: 50%; opacity: 0; }
       left: 3vw;
       text-transform: uppercase;
       letter-spacing: .24em;
-      display: block;
+      display: none;
       z-index: 11;
       font-size: 11px;
       font-weight: 700;
@@ -359,6 +378,12 @@ video { width: 50%; opacity: 0; }
     }
   }
   .menu-mobile-checkbox:checked ~ .mobile-menu-section {
+    z-index: 10;
+    span {
+      display: block;
+    }
+  }
+  .menu-mobile-checkbox:checked ~ .mobile-menu-section {
     left: 0;
     background-color: body-color;
     .side-nav {
@@ -376,7 +401,7 @@ video { width: 50%; opacity: 0; }
   width: 30%;
   height: auto;
   min-height: 300px;
-  position: absolute;
+  position: relative;
   top: 29vh;
   left: 10%;
   z-index: 7;
@@ -402,6 +427,26 @@ video { width: 50%; opacity: 0; }
       display: block;
     }
   }
+}
+
+.brick {
+  position:relative;
+  width: calc(100% - 320px);
+  left: 75px;
+  padding: 0;
+  height: 35px;
+  border-top: 1px solid white;
+  border-top-radius: 15px;
+  background: white;
+}
+.content {
+  height: auto;
+  min-height: 100vh;
+  position: relative;
+  width: calc(100% - 105px);
+  border-top: 1px solid white;
+  border-top-radius: 15px;
+  background: white;
 }
 
 @keyframes example {

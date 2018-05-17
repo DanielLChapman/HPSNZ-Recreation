@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+// eslint-disable-next-line
 !function() {
 
 	navigator.getUserMedia = navigator.getUserMedia ||
@@ -14,7 +15,7 @@ import React, {Component} from 'react';
 	 */
 	//var chars = ['@','#','$','=','*','!',';',':','~','-',',','.','&nbsp;', '&nbsp;'];
 	//For light skin
-	var chars = ['&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','<span class="small">.</span>','<span class="small">.</span>','<span class="small">.</span>','<span class="medium">*</span>','+','+','+','&nbsp;', '&nbsp;'];
+	var chars = ['&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','<span class="small">.</span>','&nbsp;','<span class="medium">*</span>','+','+','+','&nbsp;', '&nbsp;'];
 	//For booboo
 	//var chars = ['+',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ', '&nbsp;'];
 	var charLen = chars.length-1;
@@ -186,6 +187,9 @@ export default class Video extends Component {
 			container: document.getElementById('ascii-container-video'),
 			el: document.getElementById('jscii-element-video')
 		});
+		document.getElementById("jscii-element-video").addEventListener('loadeddata', function () {
+			document.getElementById("jscii-element-video").play();
+		});
 	}
 
 	componentWillReceiveProps(nextProps) {
@@ -198,19 +202,35 @@ export default class Video extends Component {
 	}
 
 	componentDidUpdate() {
-		if (this.props.burst) {
-			document.getElementById("jscii-element-video").src = './videos/Transition.mp4';
-			setTimeout(() => {
-				document.getElementById("jscii-element-video").src = `./videos/${this.state.video}.mp4`;
-			}, 5000);
-		}
+		this.pause();
+		setTimeout(this.play, 3000);
+		// if (this.props.burst) {
+		// 	document.getElementById("jscii-element-video-transition").play();
+		// 	document.getElementById("jscii-element-video").pause();
+		// 	videoJscii = new window.Jscii({
+		// 		container: document.getElementById('ascii-container-video'),
+		// 		el: document.getElementById('jscii-element-video-transition')
+		// 	});
+		// 	document.getElementById("jscii-element-video").addEventListener('loadeddata', function () {
+		// 		setTimeout(function() {
+		// 			document.getElementById("jscii-element-video-transition").pause();
+		// 			document.getElementById("jscii-element-video").play();
+		// 			videoJscii = new window.Jscii({
+		// 				container: document.getElementById('ascii-container-video'),
+		// 				el: document.getElementById('jscii-element-video')
+		// 			});
+		// 		}, 5000);
+		// 	});
+		// }
 	}
 
 	pause() {
+		document.getElementById("jscii-element-video").pause();
 		videoJscii.pause();
 	}
 
 	play() {
+		document.getElementById("jscii-element-video").play();
 		videoJscii.play();
 	}
 
@@ -229,7 +249,10 @@ export default class Video extends Component {
 		//Also get rid of empty space in front of some videos
 		return (
 			<div className="video-display">
-				<video id="jscii-element-video" width="150" height="112" controls loop autoPlay muted src={`./videos/${this.state.video}.mp4`}>
+				<video id="jscii-element-video" width="150" height="112" controls loop muted src={`./videos/${this.state.video}.mp4`}>
+					Your browser does not support video
+				</video>
+				<video id="jscii-element-video-transition" width="150" height="112" controls loop muted src='./videos/Transition.mp4'>
 					Your browser does not support video
 				</video>
 				<pre id="ascii-container-video"></pre>

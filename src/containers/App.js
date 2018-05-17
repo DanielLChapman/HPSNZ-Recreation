@@ -1,12 +1,8 @@
 import React, { Component, Fragment } from 'react';
-import { Redirect } from 'react-router';
 
-import Burst from '../components/Burst';
 import Transition from '../components/Transition';
 import Video from '../components/Video';
 import Nav from '../components/Nav'
-
-var t;
 
 class App extends Component {
 
@@ -115,13 +111,19 @@ class App extends Component {
     }
     return (
       <div className="App"> 
-        <Nav pause={this.pauseVideo} play={this.playVideo} navClick={this.navClick} mobileClick={this.mobileClick}/>
-        <section className="video-overlay">
-          <h4>{videoOverlayText}</h4>
-          <h1>{videoOverlayHighlight}</h1>
+        <header>
+          <Nav pause={this.pauseVideo} play={this.playVideo} navClick={this.navClick} mobileClick={this.mobileClick}/>
+          <section className="video-overlay">
+            <h4>{videoOverlayText}</h4>
+            <h1>{videoOverlayHighlight}</h1>
+          </section>
+          <Video ref={this.video} video={videoToUse} burst={this.state.burst} />
+          {transition}
+        </header>
+        <div className="brick">
+        </div>
+        <section className="content">
         </section>
-        <Video ref={this.video} video={videoToUse} burst={this.state.burst} />
-        {transition}
       </div>
     );
   }

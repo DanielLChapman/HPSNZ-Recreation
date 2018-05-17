@@ -4,16 +4,14 @@ import { withRouter } from "react-router-dom";
 
 class Nav extends Component {
 
-	constructor(props) {
-		super(props);
-	}
-
 	linkClick = (event, destination) => {
 		this.props.navClick();
 	}
 
 	mobileClick = () => {
-		document.getElementById('menu-mobile-checkbox').checked = false;
+		setTimeout(() => {
+			document.getElementById('menu-mobile-checkbox').checked = false;
+		}, 3000)
 		this.props.mobileClick()
 	}
 
