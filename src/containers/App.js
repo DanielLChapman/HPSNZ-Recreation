@@ -2,7 +2,9 @@ import React, { Component, Fragment } from 'react';
 
 import Transition from '../components/Transition';
 import Video from '../components/Video';
-import Nav from '../components/Nav'
+import Nav from '../components/Nav';
+
+import Home from '../components/Home';
 
 class App extends Component {
 
@@ -63,7 +65,7 @@ class App extends Component {
   }
 
   render() {
-    var videoOverlayText, videoOverlayHighlight, videoToUse;
+    var videoOverlayText, videoOverlayHighlight, videoToUse, content = <Home />;
     switch(this.props.match.params.paramters) {
       case "what": 
         videoOverlayText = "Devil’s Snare";
@@ -104,6 +106,7 @@ class App extends Component {
             <span>Powder</span> 
           </Fragment>
         videoToUse = "Hand-test";
+        content = <Home />
     }
     var transition;
     if (this.state.transition) {
@@ -111,7 +114,7 @@ class App extends Component {
     }
     return (
       <div className="App"> 
-        <header>
+        <header className="cover-header">
           <Nav pause={this.pauseVideo} play={this.playVideo} navClick={this.navClick} mobileClick={this.mobileClick}/>
           <section className="video-overlay">
             <h4>{videoOverlayText}</h4>
@@ -119,10 +122,15 @@ class App extends Component {
           </section>
           <Video ref={this.video} video={videoToUse} burst={this.state.burst} />
           {transition}
+          <div className="lines">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </header>
-        <div className="brick">
-        </div>
         <section className="content">
+          {content}
         </section>
       </div>
     );

@@ -15,7 +15,7 @@ import React, {Component} from 'react';
 	 */
 	//var chars = ['@','#','$','=','*','!',';',':','~','-',',','.','&nbsp;', '&nbsp;'];
 	//For light skin
-	var chars = ['&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','<span class="small">.</span>','&nbsp;','<span class="medium">*</span>','+','+','+','&nbsp;', '&nbsp;'];
+	var chars = ['&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','+','+','+','&nbsp;', '&nbsp;'];
 	//For booboo
 	//var chars = ['+',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ', '&nbsp;'];
 	var charLen = chars.length-1;
@@ -38,12 +38,12 @@ import React, {Component} from 'react';
 	 */
 	function Jscii(params) {
 		var self = this;
-		var preWidth = document.getElementById("ascii-container-video").offsetWidth;
+		var preHeight = document.documentElement.clientHeight;
 
 		var el = this.el = params.el;
 		this.container = params.container;
 		this.fn = typeof params.fn === 'function' ? params.fn : null;
-		this.width = typeof params.width === 'number' ? params.width : Math.floor(preWidth/5);
+		this.height = typeof params.height === 'number' ? params.height : Math.floor(preHeight/5);
 		this.color = !!params.color;
 
 		this.canvas = document.createElement('canvas');
@@ -89,8 +89,7 @@ import React, {Component} from 'react';
 	};
 
 	Jscii.prototype.resize = function() {
-		console.log('here');
-		this.preWidth = document.getElementById("ascii-container-video").offsetWidth;
+		this.preHeight = document.documentElement.clientHeight;
 		return this;
 	};
 
@@ -111,11 +110,11 @@ import React, {Component} from 'react';
 	 * gets context image data, perform ascii conversion, append string to container
 	 */
 	Jscii.prototype.render = function() {
-		var el = this.el, nodeName = el.nodeName, ratio;
+		var el = this.el, ratio;
 		var dim = this.dimension(), width, height;
 		if(!dim.width || !dim.height) {
-			ratio = nodeName === 'IMG' ? el.height/el.width : el.videoHeight/el.videoWidth;
-			this.dimension(this.width, parseInt(this.width*ratio, 10));
+			ratio = el.videoWidth/el.videoHeight;
+			this.dimension(parseInt(this.height*ratio, 10), this.height);
 			dim = this.dimension();
 		}
 		width = dim.width;
