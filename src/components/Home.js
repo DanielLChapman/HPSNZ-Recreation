@@ -78,7 +78,7 @@ export default class Home extends Component {
 							<button className="article-button-hidden tag-hidden"></button>
 						</div>
 						<div className="journal-flex-div journal-flex-div-3">
-							<img src="./images/fire-exposure.jpeg" alt="fire-exposure-image"/>
+							<img src="./images/fire-exposure.jpeg" alt="fire-exposure"/>
 							<div className="article-information">
 								<h6>MAY 2018 <span></span> ARTICLES</h6>
 								<h3>MAGICAL<br />CREATURES</h3>

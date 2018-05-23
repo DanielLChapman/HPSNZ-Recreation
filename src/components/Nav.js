@@ -2,6 +2,8 @@ import React, {Component, Fragment} from 'react';
 import { NavLink } from 'react-router-dom';
 import { withRouter } from "react-router-dom";
 
+import { TransitionGroup} from 'react-transition-group';
+
 class Nav extends Component {
 
 	linkClick = (event, destination) => {
@@ -29,12 +31,20 @@ class Nav extends Component {
 		return (
 			<Fragment>
 				<div className='navbar'>
-					<ul className="nav-list">
-						<li className="home-nav-link"><NavLink onClick={(e) => {this.linkClick(e, '/')}} to="/"><h3>Home</h3></NavLink></li>	
-						<li><NavLink onClick={(e) => {this.linkClick(e, '/')}} to="/what"><h3>Devil's Snare</h3></NavLink></li>
-						<li><NavLink onClick={(e) => {this.linkClick(e, '/how')}} to="/how"><h3>Pidwidgeon</h3></NavLink></li>
-						<li><NavLink onClick={(e) => {this.linkClick(e, '/')}} to="/huh"><h3>Toad-Like Smike</h3></NavLink></li>
-					</ul>
+					<TransitionGroup component="ul" className="nav-list">
+						<li className="home-nav-link">
+							<NavLink onClick={(e) => {this.linkClick(e, '/')}} to="/"><h3>Home</h3></NavLink>
+						</li>	
+						<li>
+							<NavLink onClick={(e) => {this.linkClick(e, '/')}} to="/what"><h3>Devil's Snare</h3></NavLink>
+						</li>
+						<li>
+							<NavLink onClick={(e) => {this.linkClick(e, '/how')}} to="/how"><h3>Pidwidgeon</h3></NavLink>
+						</li>
+						<li>
+							<NavLink onClick={(e) => {this.linkClick(e, '/')}} to="/huh"><h3>Toad-Like Smike</h3></NavLink>
+						</li>
+					</TransitionGroup>
 				</div>
 				<div className="side-nav-container">
 					<section className="side-nav">

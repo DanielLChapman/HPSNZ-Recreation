@@ -3,8 +3,11 @@ import React, { Component, Fragment } from 'react';
 import Transition from '../components/Transition';
 import Video from '../components/Video';
 import Nav from '../components/Nav';
+import Footer from '../components/Footer';
 
 import Home from '../components/Home';
+
+
 
 class App extends Component {
 
@@ -32,8 +35,24 @@ class App extends Component {
     }
   }
 
+  UNSAFE_componentWillUpdate() {
+    var element = document.querySelector('.video-overlay-highlight');
+    element.classList.remove("video-overlay-active");
+  }
+
+  componentDidUpdate() {
+    var element = document.querySelector('.video-overlay-highlight');
+    setTimeout(() => {
+      element.classList.add("video-overlay-active");
+    }, 100);
+  }
+
   componentDidMount() {
     window.addEventListener("resize", this.video.current.resize);
+    var element = document.querySelector('.video-overlay-highlight');
+    setTimeout(() => {
+      element.classList.add("video-overlay-active");
+    }, 100);
   }
 
   componentWillUnmount() {
@@ -118,7 +137,7 @@ class App extends Component {
           <Nav pause={this.pauseVideo} play={this.playVideo} navClick={this.navClick} mobileClick={this.mobileClick}/>
           <section className="video-overlay">
             <h4>{videoOverlayText}</h4>
-            <h1>{videoOverlayHighlight}</h1>
+            <h1 className="video-overlay-highlight">{videoOverlayHighlight}</h1>
           </section>
           <Video ref={this.video} video={videoToUse} burst={this.state.burst} />
           {transition}
@@ -132,6 +151,7 @@ class App extends Component {
         <section className="content">
           {content}
         </section>
+        <Footer />
       </div>
     );
   }
