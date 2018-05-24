@@ -6,7 +6,7 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 
 import Home from '../components/Home';
-
+import Article from '../components/Article';
 
 
 class App extends Component {
@@ -85,6 +85,7 @@ class App extends Component {
 
   render() {
     var videoOverlayText, videoOverlayHighlight, videoToUse, content = <Home />;
+    content = <Article parameters={this.props.match.params.paramters} />
     switch(this.props.match.params.paramters) {
       case "what": 
         videoOverlayText = "Devil’s Snare";

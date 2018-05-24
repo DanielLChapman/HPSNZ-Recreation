@@ -1,0 +1,46 @@
+.article-top-nav {
+	color: orange;
+	display: block;
+	position: relative;
+	left: 5vw;
+	font-family: 'Space Mono', monospace;
+	font-size: 13px;
+	letter-spacing: .1em;
+	margin-top: -35px;
+	transition: 1s;
+	.article-top-nav-name {
+		transition: 1s;
+	}
+	.article-top-nav-name:hover {
+		color: dark-font-color;
+	}
+	a {
+		color: dark-font-color;
+		margin-bottom: 5px;
+		text-decoration: none;
+		margin-right: 30px;
+		transition: 2s ease-out;
+		display: inline-block;
+		&:hover {
+			&:before {
+				width: 0px;
+				left: 15px;
+			}
+		}
+		&:before {
+			content: "";
+			display: block;
+			transition: 1s;
+			position: absolute;
+			bottom: -1px;
+			border-bottom: 1px solid dark-font-color;
+			width: 37px;
+			left: 0;
+		}
+		&:after {
+			content: ".";
+			display: inline-block;
+			margin-left: 30px;
+		}
+	}
+}
