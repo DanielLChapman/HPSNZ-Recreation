@@ -41,6 +41,7 @@ export default class Burst extends Component {
 			fragment.appendChild(el);
 	    }
 	    document.querySelector('.burst-display').appendChild(fragment);
+	    
 	}
 
 	render() {

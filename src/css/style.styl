@@ -50,6 +50,7 @@ body {
   height: 100%;
 }
 
+
 .navbar {
   position: relative;
   padding: 0;
@@ -141,11 +142,12 @@ body {
     transition: 1s;
     @media screen and (max-width: 1024px) {
       top: 76px;
-      right: 35px;
+      right: 45px;
     }
   }
   .menu-mobile-close-name {
     display: none;
+
   }
   .menu-mobile-checkbox {
     top: 65px;
@@ -184,8 +186,10 @@ body {
       padding: 0;
     }  
     @media screen and (max-width: 1024px) {
-      top: 50px;
-      right: 30px;
+      top: 30px;
+      right: 20px;
+      padding: 20px;
+      background: #242424;
     }
   }
   .menu-mobile-checkbox {
@@ -194,6 +198,7 @@ body {
   .menu-mobile-checkbox:checked {
     & ~ .menu-mobile-close-name {
       display: block;
+
     }
     & ~ .menu-mobile-menu-name {
       display: none;
@@ -205,7 +210,8 @@ body {
     border-bottom: 2px solid transparent;
     right: 44px;
     @media screen and (max-width: 1024px) {
-      right: 29px;
+      right: 19px;
+      background: transparent;
     }
 
     -webkit-transition: 2s ease-in-out;
