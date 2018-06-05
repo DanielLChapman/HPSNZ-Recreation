@@ -7,7 +7,7 @@ export default class Devil extends Component {
 				<section className="article-title-header">
 					<h1 className="article-title-left">Alohamora wand elf parchment, Wingardium Leviosa hippogriff</h1>
 					<div className="article-title-header-wrapper">
-						<div className="article-title-header-left">
+						<div className="article-title-header-left devil-article-title-header-left">
 							<section className="left-title-top">
 								<p>Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. </p>
 								<div className="title-bracket title-bracket-left">
@@ -22,7 +22,7 @@ export default class Devil extends Component {
 								Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity.
 							</p>
 						</div>
-						<div className="article-title-header-right">
+						<div className="article-title-header-right devil-article-title-header-right">
 							<h3>Pages In This Section</h3>
 							<ul>
 								{

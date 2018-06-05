@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import { NavLink } from 'react-router-dom';
 
 import Devil from '../pages/Devil';
+import Pidwidgeon from '../pages/Pidwidgeon';
 
 export default class Article extends Component {
 	linkClick = () => {
@@ -16,6 +17,10 @@ export default class Article extends Component {
 			case "what":
 				name = "Devil's Snare";
 				page = <Devil />
+				break;
+			case "how":
+				name= "Pidwidgeon";
+				page = <Pidwidgeon />;
 				break;
 			default: 
 				page = <Devil />

@@ -1,0 +1,62 @@
+#follower {
+  position: absolute;
+  top: 0%;
+  display: none;
+  left: 0%;
+  &:active {
+    #circle1 {
+      width: 2.5em;
+      height: 2.5em;
+      margin-top: -1.25em;
+      margin-left: -1.25em;
+      border:1px solid white;
+    }
+    #circle2 {
+      width: 2em;
+      height: 2em;
+      margin-top: -1em;
+      margin-left: -1em;
+    }
+  }
+}
+#follower #circle1 {
+  position: absolute;
+  background: transparent;
+  border-radius: 50%;
+  border:2px solid light-font-color;
+  height: 3em;
+  width: 3em;
+  margin-top: -1.5em;
+  transition: 1.5s;
+  margin-left: -1.5em;
+  &:before {
+    content: "<";
+    display: block;
+    vertical-align: top;
+    left: -30px;
+    position: relative;
+    top: 18px;
+    font-size: 8px;
+    color: light-grey;
+  }
+  &:after {
+    content: ">";
+    display: block;
+    position: relative;
+    top: 8px;
+    text-align: right;
+    font-size: 8px;
+    left: 30px;
+    color: light-grey;
+  }
+}
+#follower #circle2 {
+  position: absolute;
+  background: orange;
+  border-radius: 50%;
+  height: .4em;
+  width: .4em;
+  margin-top: -.2em;
+  margin-left: -.2em;
+  transition: 1.5s;
+}

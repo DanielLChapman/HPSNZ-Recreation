@@ -15,7 +15,7 @@ import React, {Component} from 'react';
 	 */
 	//var chars = ['@','#','$','=','*','!',';',':','~','-',',','.','&nbsp;', '&nbsp;'];
 	//For light skin
-	var chars = ['&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','+','+','+','&nbsp;', '&nbsp;'];
+	var chars = ['&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','&nbsp;','*','.','+','+','.','.', '&nbsp;'];
 	//For booboo
 	//var chars = ['+',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ', '&nbsp;'];
 	var charLen = chars.length-1;
