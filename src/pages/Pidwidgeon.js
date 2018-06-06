@@ -194,7 +194,7 @@ export default class Devil extends Component {
 								</div>
 								<div className="carousel-cell-content-text">
 									<h4>Pigwidgeon</h4>
-									<h3>Blue<br />Flame Ickle</h3>
+									<h3>Blue<br />Flame</h3>
 								</div>
 							</div>
 						</div>
@@ -232,6 +232,8 @@ export default class Devil extends Component {
 					  <div id="circle2"></div>
 					</div>
 
+				</section>
+				<section className="white-section" style={{height: "600px"}}>
 				</section>
 			</Fragment>
 		)

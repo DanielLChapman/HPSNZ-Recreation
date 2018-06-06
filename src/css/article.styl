@@ -50,7 +50,7 @@ article {
 	}
 }
 .article-title-header, .large-image, .side-images, .media-block, .cards {
-	width: 100%;
+	width: calc(100% + 130px);
 	position: relative;
 	min-height: 600px;
 	@media screen and (max-width: 1024px) {
@@ -59,6 +59,10 @@ article {
 }
 .large-image {
 	width: calc(100% + 130px);
+	img {
+		width: 100%;
+		height: auto;
+	}
 }
 .article-title-header {
 	width: 100%;
@@ -360,10 +364,12 @@ article {
 		}
 	}
 	.pidwidgeon-article-title-header-right {
-
+		@media screen and (min-width: 1024px) {
+			left: 130px;
+		}
 	}
 	.article-header-content-grey {
-		width: 100%;
+		width: calc(100% + 130px);
 		height: auto;
 		min-height: 600px;
 		position: relative;
@@ -513,7 +519,7 @@ article {
 		position: relative;
 		img {
 			position: relative;
-			width: auto;
+			width: 100%;
 			height: auto;
 			min-height: 100vh;
 			@media screen and (max-width: 825px) {
@@ -644,6 +650,7 @@ article {
 				font-size: 63px;
 				line-height: 1.2;
 				letter-sacing: .1em;
+				width: 600px;
 				font-family: 'Open Sans', sans-serif;
 				margin-top: -25px;
 				@media screen and (max-width: 1230px) {
@@ -669,6 +676,7 @@ article {
 				}
 			}
 		}
+		
 		&:nth-child(2) {
 			background: #f6f6f6;
 			.side-images-text {
@@ -968,7 +976,7 @@ article {
 			  			letter-spacing: .2em;
 			  			font-family: 'Roboto', sans-serif;
 			  			@media screen and (max-width: 2200px) {
-			  				font-size: 1.5vw;
+			  				font-size: 25px;
 			  			}
 			  			@media screen and (max-width: 1024px) {
 			  				font-size: 24px;
@@ -1107,4 +1115,57 @@ article {
   	}
 	
 
+}
+
+.fun-content {
+	overflow: hidden;
+}
+
+.huh-content {
+	background: transparent !important;
+	margin-top: -200px;
+	width: 100% !important;
+	@media screen and (max-height: 750px) {
+		margin-top: 100px;
+	}
+	@media screen and (max-height: 400px) {
+		margin-top: 30px;
+	}
+	.toad-article {
+		width: calc(100% - 130px);
+		@media screen and (max-width: 1024px) {
+			width: 100%;
+		}
+		background: transparent;
+		.article-top-nav-name {
+			left: 5%;
+			position: relative;
+			margin-right: 60px;
+			color: white !important;
+			vertical-align: top;
+			font-size: 13px;
+			font-family: 'Roboto', sans-serif;
+			letter-spacing: .13em;
+			display: inline-block;
+			&:after {
+				content: "";
+				width: 0%;
+				transition: 1s;
+				display: block;
+				position: relative;
+				left: 50%;
+				border-top: 1px solid orange;
+			}
+			&:hover {
+				&:after {
+					width: 100%;
+					left: 0;
+				}
+			}
+		}
+		.fullsize, .fullsize-journal {
+			padding-top: 150px;
+			background: transparent !important;
+		}
+	}	
 }

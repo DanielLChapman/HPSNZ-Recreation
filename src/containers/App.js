@@ -8,6 +8,9 @@ import Footer from '../components/Footer';
 import Home from '../components/Home';
 import Article from '../components/Article';
 
+import Toad from '../pages/Toad';
+import Stars from '../components/Stars';
+
 
 class App extends Component {
 
@@ -48,7 +51,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener("resize", this.video.current.resize);
+    if (this.video.current) {
+      window.addEventListener("resize", this.video.current.resize);
+    }
     var element = document.querySelector('.video-overlay-highlight');
     setTimeout(() => {
       element.classList.add("video-overlay-active");
@@ -84,7 +89,7 @@ class App extends Component {
   }
 
   render() {
-    var videoOverlayText, videoOverlayHighlight, videoToUse, content = <Home />;
+    var videoOverlayText, videoOverlayHighlight, content = <Home />, videoToUse;
     content = <Article parameters={this.props.match.params.paramters} />
     switch(this.props.match.params.paramters) {
       case "what": 
@@ -95,7 +100,8 @@ class App extends Component {
             <span>Love</span> 
             <span>Potion</span> 
           </Fragment>
-        videoToUse = "Grasp";
+        videoToUse =  <Video ref={this.video} video="Grasp" burst={this.state.burst} />
+
         break;
       case "how":
         videoOverlayText = "Pigwidgeon";
@@ -105,7 +111,7 @@ class App extends Component {
             <span>Phoenix</span> 
             <span>Feather</span> 
           </Fragment>
-        videoToUse = "Rolling";
+        videoToUse =  <Video ref={this.video} video="Rolling" burst={this.state.burst} />
         break;
       case "huh":
         videoOverlayText = "Toad-like smile";
@@ -115,7 +121,8 @@ class App extends Component {
             <span>And</span> 
             <span>Blotts</span> 
           </Fragment>
-        videoToUse = "2-hands";
+        content = <Toad />
+        videoToUse = <Stars />
         break;
       default: 
         videoOverlayText = "We Are";
@@ -125,13 +132,15 @@ class App extends Component {
             <span>Night</span> 
             <span>Powder</span> 
           </Fragment>
-        videoToUse = "Hand-test";
+          videoToUse =  <Video ref={this.video} video="Hand-test" burst={this.state.burst} />
+
         content = <Home />
     }
     var transition;
     if (this.state.transition) {
       transition = <Transition key={Date.now()} />
     }
+    
     return (
       <div className="App"> 
         <header className="cover-header">
@@ -140,7 +149,8 @@ class App extends Component {
             <h4>{videoOverlayText}</h4>
             <h1 className="video-overlay-highlight">{videoOverlayHighlight}</h1>
           </section>
-          <Video ref={this.video} video={videoToUse} burst={this.state.burst} />
+
+          {videoToUse}
           {transition}
           <div className="lines">
             <div></div>
@@ -149,7 +159,7 @@ class App extends Component {
             <div></div>
           </div>
         </header>
-        <section className="content">
+        <section className={`content ${this.props.match.params.paramters}-content`}>
           {content}
         </section>
         <Footer />

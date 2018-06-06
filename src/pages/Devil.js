@@ -95,7 +95,7 @@ export default class Devil extends Component {
 							<div>
 							</div>
 						</div>
-						<div className="side-images-text">
+						<div className="side-images-text international-quidditich">
 							<h5>INTERNATIONAL QUIDDITCH</h5>
 							<h1>531 athletes</h1>
 							<div className="title-bracket title-bracket-left">
@@ -104,7 +104,7 @@ export default class Devil extends Component {
 						</div>
 					</div>
 					<div className="side-images-wrapper" id="mischief">
-						<div className="side-images-text">
+						<div className="side-images-text practitioner-experience">
 							<h5>PRACTITIONER EXPERIENCE</h5>
 							<h1>500,000 hours</h1>
 							<div className="title-bracket title-bracket-left">

@@ -65,7 +65,7 @@ export default class Home extends Component {
 						</div>
 					</header>
 					<section className="explore-journal-link">
-						<NavLink onClick={(e) => {this.linkClick(e, '/')}} to="/what"><h5>Explore all Entries <span></span></h5></NavLink>
+						<NavLink onClick={(e) => {this.linkClick(e, '/')}} to="/huh"><h5>Explore all Entries <span></span></h5></NavLink>
 					</section>
 					<section className="journal-flex">
 						<div className="journal-flex-div journal-flex-div-3">
