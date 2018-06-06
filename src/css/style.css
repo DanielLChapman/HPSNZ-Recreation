@@ -1255,6 +1255,16 @@ article a {
   width: calc(100% - 130px);
   background: transparent;
 }
+@media screen and (max-height: 750px) {
+  .huh-content .toad-article {
+    margin-top: -100px;
+  }
+}
+@media screen and (max-height: 400px) {
+  .huh-content .toad-article {
+    margin-top: -30px;
+  }
+}
 @media screen and (max-width: 1024px) {
   .huh-content .toad-article {
     width: 100%;
@@ -1270,6 +1280,8 @@ article a {
   font-family: 'Roboto', sans-serif;
   letter-spacing: 0.13em;
   display: inline-block;
+  cursor: pointer;
+  z-index: 11;
 }
 .huh-content .toad-article .article-top-nav-name:after {
   content: "";
@@ -1289,6 +1301,171 @@ article a {
 .huh-content .toad-article .fullsize-journal {
   padding-top: 150px;
   background: transparent !important;
+}
+.huh-content .toad-article .fullsize .article-information,
+.huh-content .toad-article .fullsize-journal .article-information {
+  z-index: 5;
+  margin-top: -130px !important;
+}
+.huh-content .toad-article .journal-flex-div {
+  display: none;
+}
+.huh-content .toad-article .journal-flex-div .image-container {
+  width: 80%;
+  height: auto;
+  z-index: -1;
+  position: relative;
+  display: none;
+  background: transparent;
+  overflow: hidden;
+}
+.huh-content .toad-article .journal-flex-div .image-container .image-container-image {
+  opacity: 1;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 4;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  -webkit-animation: 1.3s opacity;
+          animation: 1.3s opacity;
+}
+.huh-content .toad-article .journal-flex-div .image-container .image-container-image img {
+  visibility: hidden;
+}
+.huh-content .toad-article .journal-flex-div .image-container .image-container-slider {
+  width: 140%;
+  height: 140%;
+  position: absolute;
+  z-index: 3;
+  top: -20%;
+  left: -20%;
+  background: initial;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fd8c3f), to(#fd8c3f));
+  background-image: linear-gradient(#fd8c3f, #fd8c3f);
+  background-size: 100% 100%;
+  opacity: 0;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  -webkit-animation: 1s slideUp;
+          animation: 1s slideUp;
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+.huh-content .toad-article .journal-flex-div .image-container .image-container-slider-2 {
+  width: 140%;
+  height: 140%;
+  position: absolute;
+  z-index: 3;
+  opacity: 0;
+  top: -30%;
+  left: -20%;
+  background: initial;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#333), to(#333));
+  background-image: linear-gradient(#333, #333);
+  background-size: 100% 100%;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  -webkit-animation: 1s slideUp;
+          animation: 1s slideUp;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+.huh-content .toad-article .journal-flex-div .image-container .image-container-butterflies {
+  background: url("/images/butterflies.jpeg");
+}
+.huh-content .toad-article .journal-flex-div .image-container .image-container-fire-exposure {
+  background: url("/images/fire-exposure.jpeg");
+}
+.huh-content .toad-article .journal-flex-div .image-container .image-container-light-book {
+  background: url("/images/light-book.jpeg");
+}
+.huh-content .toad-article .journal-flex-div .image-container .image-container-wood-map {
+  background: url("/images/wood-map.jpeg");
+}
+.huh-content .toad-article .journal-flex-div .image-container .image-container-fire {
+  background: url("/images/fire.jpeg");
+}
+.huh-content .toad-article .journal-flex-div .image-container .image-container-sparks {
+  background: url("/images/sparks.jpeg");
+}
+.huh-content .toad-article .journal-flex-div .image-container .image-container-smoke {
+  background: url("/images/smoke.jpeg");
+}
+.huh-content .toad-article .image-container-container-active {
+  display: block;
+}
+.huh-content .toad-article .image-container-container-active .image-container {
+  display: block;
+}
+.huh-content .toad-article .image-container-container-active .image-container .image-container-image {
+  -webkit-animation: 1.3s opacity;
+          animation: 1.3s opacity;
+}
+.huh-content .toad-article .image-container-container-active .image-container .image-container-slider {
+  -webkit-animation: 1s slideUp;
+          animation: 1s slideUp;
+}
+.huh-content .toad-article .image-container-container-active .image-container .image-container-slider-2 {
+  -webkit-animation: 1s slideUp;
+          animation: 1s slideUp;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slideUp {
+  0% {
+    background-size: 100% 1%;
+    opacity: 1;
+  }
+  50% {
+    background-size: 100% 100%;
+    opacity: 1;
+  }
+  100% {
+    background-size: 100% 1%;
+    opacity: 1;
+    background-position: 100% 0%;
+  }
+}
+@keyframes slideUp {
+  0% {
+    background-size: 100% 1%;
+    opacity: 1;
+  }
+  50% {
+    background-size: 100% 100%;
+    opacity: 1;
+  }
+  100% {
+    background-size: 100% 1%;
+    opacity: 1;
+    background-position: 100% 0%;
+  }
 }
 #follower {
   position: absolute;

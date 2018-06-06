@@ -1133,6 +1133,12 @@ article {
 	}
 	.toad-article {
 		width: calc(100% - 130px);
+		@media screen and (max-height: 750px) {
+			margin-top: -100px;
+		}
+		@media screen and (max-height: 400px) {
+			margin-top: -30px;
+		}
 		@media screen and (max-width: 1024px) {
 			width: 100%;
 		}
@@ -1147,6 +1153,8 @@ article {
 			font-family: 'Roboto', sans-serif;
 			letter-spacing: .13em;
 			display: inline-block;
+			cursor: pointer;
+			z-index: 11;
 			&:after {
 				content: "";
 				width: 0%;
@@ -1166,6 +1174,143 @@ article {
 		.fullsize, .fullsize-journal {
 			padding-top: 150px;
 			background: transparent !important;
+			.article-information {
+				z-index: 5;
+				margin-top: -130px !important;
+			}
+		}
+		.journal-flex-div {
+			display: none;
+			.image-container {
+			  width: 80%;
+			  height: auto;
+			  z-index: -1;
+			  position: relative;
+			  display: none;
+			  background: transparent;
+			  overflow: hidden;
+			  .image-container-image {
+			    opacity: 1;
+			    width: 100%;
+			    height: auto;
+			    position: relative;
+			    z-index: 4;
+			    background-size: cover !important;
+			    background-repeat: no-repeat !important;
+			    background-position: center !important;
+			    animation: 1.3s opacity;
+			  	img {
+			  		visibility: hidden;
+			  	}
+			  }
+			  .image-container-slider {
+				    width: 140%;
+				    height: 140%;
+				    position: absolute;
+				    z-index: 3;
+				    top: -20%;
+				    left: -20%;
+				    background: initial;
+					background-image: linear-gradient(orange, orange);
+				    background-size: 100% 100%;
+				    opacity: 0;
+				    background-position: 50% 100%;
+				    background-repeat: no-repeat;
+				    animation: 1s slideUp;
+				    transform: rotate(-10deg);
+				    
+				}
+				.image-container-slider-2 {
+				    width: 140%;
+				    height: 140%;
+				    position: absolute;
+				    z-index: 3;
+				    opacity: 0;
+				    top: -30%;
+				    left: -20%;
+				    background: initial;
+					background-image: linear-gradient(menu, menu);
+				    background-size: 100% 100%;
+				    background-position: 50% 100%;
+				    background-repeat: no-repeat;
+				    animation: 1s slideUp;
+				    animation-delay: .5s;
+				    transform: rotate(-10deg);
+				}
+				.image-container-butterflies {
+					
+					background: url("/images/butterflies.jpeg");
+				}
+				.image-container-fire-exposure {	
+
+					background: url("/images/fire-exposure.jpeg");
+				}
+				.image-container-light-book {	
+
+					background: url("/images/light-book.jpeg");
+				}
+				.image-container-wood-map {	
+
+					background: url("/images/wood-map.jpeg");
+				}
+				.image-container-fire {	
+
+					background: url("/images/fire.jpeg");
+				}
+				.image-container-sparks {	
+
+					background: url("/images/sparks.jpeg");
+				}
+				.image-container-smoke {
+	
+					background: url("/images/smoke.jpeg");
+				}
+			}
+		}
+		.image-container-container-active {
+			display: block;
+			.image-container {
+				display: block;
+				.image-container-image {
+				    animation: 1.3s opacity;
+				}
+				.image-container-slider {
+				    animation: 1s slideUp;
+				    
+				}
+				.image-container-slider-2 {
+				    animation: 1s slideUp;
+				    animation-delay: .5s;
+				    
+				}
+			}
+			
 		}
 	}	
+}
+
+
+@keyframes opacity {
+    0% {opacity: 0;}
+    95% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes slideUp {
+  0% {
+    background-size: 100% 1%;
+    opacity: 1;
+  }
+  50% {
+    background-size: 100% 100%;
+    opacity: 1;
+  }
+  55% {
+   
+  }
+  100% {
+     background-size: 100% 1%;
+    opacity: 1;
+    background-position: 100% 0%;
+  }
 }

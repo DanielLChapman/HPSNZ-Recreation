@@ -1,21 +1,55 @@
 import React, {Component, Fragment} from 'react';
-import { NavLink } from 'react-router-dom';
 
 export default class Toad extends Component {
-
+	constructor(props) {
+		super(props);
+		this.state = {
+			increment: 0,
+			all: false
+		};
+	}
 	componentDidMount() {
 		setTimeout(
 			window.startStar, 500);
 	}
+	handleClick = (type) => {
+		let t = document.getElementsByClassName('journal-flex-div');
+
+		Array.prototype.forEach.call(t, (x) => {
+			x.classList.remove('image-container-container-active');
+		})
+		var y = document.getElementsByClassName(`journal-flex-${type}`);
+
+		setTimeout( () => {
+			Array.prototype.forEach.call(y, (x) => {
+				x.classList.add('image-container-container-active');
+			});
+		}, 500);
+	}
+
 	render() {
 		return (
 			<Fragment>
 				<article className="toad-article">
-					<span className="article-top-nav"><span className="article-top-nav-name">All</span><span className="article-top-nav-name">Articles</span><span className="article-top-nav-name">Case Studies</span><span className="article-top-nav-name">Interviews</span><span className="article-top-nav-name">Recipes</span></span>
+					<span className="article-top-nav">
+						<span className="article-top-nav-name" onClick={() => {this.handleClick('all')}}>All</span>
+						<span className="article-top-nav-name" onClick={() => {this.handleClick('articles')}}>Articles</span>
+						<span className="article-top-nav-name" onClick={() => {this.handleClick('case-studies')}}>Case Studies</span>
+						<span className="article-top-nav-name" onClick={() => {this.handleClick('interviews')}}>Interviews</span>
+						<span className="article-top-nav-name" onClick={() => {this.handleClick('recipes')}}>Recipes</span>
+					</span>
 					<section className="fullsize fullsize-journal">
 						<section className="journal-flex">
-							<div className="journal-flex-div journal-flex-div-3">
-								<img src="./images/butterflies.jpeg" alt="butterflies"/>
+							<div className={`journal-flex-div journal-flex-div-3 journal-flex-all journal-flex-articles `}>
+								<div className="image-container">
+								  <div className="image-container-slider">
+								  </div>
+								  <div className="image-container-slider-2">
+								  </div>
+								  <div className="image-container-image image-container-butterflies">
+								  	<img src="/images/butterflies.jpeg" alt="butterflies" />
+								  </div>
+								</div> 
 								<div className="article-information">
 									<h6>MAY 2018 <span></span> ARTICLES</h6>
 									<h3>MAGICAL<br />CREATURES</h3>
@@ -23,8 +57,51 @@ export default class Toad extends Component {
 								<button className="article-button-main tag-main">Read Article</button>
 								<button className="article-button-hidden tag-hidden"></button>
 							</div>
-							<div className="journal-flex-div journal-flex-div-3">
-								<img src="./images/fire-exposure.jpeg" alt="fire-exposure"/>
+							<div className='journal-flex-div journal-flex-div-3 journal-flex-all journal-flex-interviews '>
+								<div className="image-container">
+								  <div className="image-container-slider">
+								  </div>
+								  <div className="image-container-slider-2">
+								  </div>
+								  <div className="image-container-image image-container-fire-exposure">
+								  	<img src="./images/fire-exposure.jpeg" alt="fire-exposure"/>
+								  </div>
+								</div> 
+								<div className="article-information">
+									<h6>MAY 2018 <span></span> INTERVIEWS</h6>
+									<h3>MAGICAL<br />CREATURES</h3>
+								</div>
+								<button className="article-button-main tag-main">Read Article</button>
+								<button className="article-button-hidden tag-hidden"></button>
+							</div>
+							<div className="journal-flex-div journal-flex-div-3 journal-flex-all journal-flex-recipes ">
+								<div className="image-container">
+								  <div className="image-container-slider">
+								  </div>
+								  <div className="image-container-slider-2">
+								  </div>
+								  <div className="image-container-image image-container-light-book">
+								  	<img src="./images/light-book.jpeg" alt="light-book"/>
+								  </div>
+								</div> 
+								<div className="article-information">
+									<h6>MAY 2018 <span></span> RECIPES</h6>
+									<h3>MAGICAL<br />CREATURES</h3>
+								</div>
+								<button className="article-button-main tag-main">Read Article</button>
+								<button className="article-button-hidden tag-hidden"></button>
+							</div>
+							<div className="journal-flex-div journal-flex-div-5  journal-flex-all journal-flex-case-studies">
+								<div className="image-container">
+								  <div className="image-container-slider">
+								  </div>
+								  <div className="image-container-slider-2">
+								  </div>
+								  <div className="image-container-image image-container-wood-map">
+								  	<img src="./images/wood-map.jpeg" alt="wood-map"/>
+								  </div>
+								</div> 
+
 								<div className="article-information">
 									<h6>MAY 2018 <span></span> ARTICLES</h6>
 									<h3>MAGICAL<br />CREATURES</h3>
@@ -32,8 +109,35 @@ export default class Toad extends Component {
 								<button className="article-button-main tag-main">Read Article</button>
 								<button className="article-button-hidden tag-hidden"></button>
 							</div>
-							<div className="journal-flex-div journal-flex-div-3">
-								<img src="./images/light-book.jpeg" alt="light-book"/>
+							<div className="journal-flex-div journal-flex-div-1 journal-flex-all journal-flex-interviews ">
+								<div className="image-container">
+								  <div className="image-container-slider">
+								  </div>
+								  <div className="image-container-slider-2">
+								  </div>
+								  <div className="image-container-image image-container-fire">
+								  	<img src="./images/fire.jpeg" alt="fire"/>
+								  </div>
+								</div> 
+								
+								<div className="article-information">
+									<h6>MAY 2018 <span></span> INTERVIEWS</h6>
+									<h3>MAGICAL<br />CREATURES</h3>
+								</div>
+								<button className="article-button-main tag-main">Read Article</button>
+								<button className="article-button-hidden tag-hidden"></button>
+							</div>
+							<div className="journal-flex-div journal-flex-div-2 journal-flex-all journal-flex-articles">
+								<div className="image-container">
+								  <div className="image-container-slider">
+								  </div>
+								  <div className="image-container-slider-2">
+								  </div>
+								  <div className="image-container-image image-container-sparks">
+								  	<img src="./images/sparks.jpeg" alt="sparks"/>
+								  </div>
+								</div> 
+
 								<div className="article-information">
 									<h6>MAY 2018 <span></span> ARTICLES</h6>
 									<h3>MAGICAL<br />CREATURES</h3>
@@ -41,35 +145,17 @@ export default class Toad extends Component {
 								<button className="article-button-main tag-main">Read Article</button>
 								<button className="article-button-hidden tag-hidden"></button>
 							</div>
-							<div className="journal-flex-div journal-flex-div-5">
-								<img src="./images/wood-map.jpeg" alt="wood-map"/>
-								<div className="article-information">
-									<h6>MAY 2018 <span></span> ARTICLES</h6>
-									<h3>MAGICAL<br />CREATURES</h3>
-								</div>
-								<button className="article-button-main tag-main">Read Article</button>
-								<button className="article-button-hidden tag-hidden"></button>
-							</div>
-							<div className="journal-flex-div journal-flex-div-1">
-								<img src="./images/fire.jpeg" alt="fire"/>
-								<div className="article-information">
-									<h6>MAY 2018 <span></span> ARTICLES</h6>
-									<h3>MAGICAL<br />CREATURES</h3>
-								</div>
-								<button className="article-button-main tag-main">Read Article</button>
-								<button className="article-button-hidden tag-hidden"></button>
-							</div>
-							<div className="journal-flex-div journal-flex-div-2">
-								<img src="./images/sparks.jpeg" alt="sparks"/>
-								<div className="article-information">
-									<h6>MAY 2018 <span></span> ARTICLES</h6>
-									<h3>MAGICAL<br />CREATURES</h3>
-								</div>
-								<button className="article-button-main tag-main">Read Article</button>
-								<button className="article-button-hidden tag-hidden"></button>
-							</div>
-							<div className="journal-flex-div journal-flex-div-2">
-								<img src="./images/smoke.jpeg" alt="smoke"/>
+							<div className="journal-flex-div journal-flex-div-2 journal-flex-all journal-flex-articles">
+								<div className="image-container">
+								  <div className="image-container-slider">
+								  </div>
+								  <div className="image-container-slider-2">
+								  </div>
+								  <div className="image-container-image image-container-smoke">
+								  	<img src="./images/smoke.jpeg" alt="smoke"/>
+								  </div>
+								</div> 
+
 								<div className="article-information">
 									<h6>MAY 2018 <span></span> ARTICLES</h6>
 									<h3>MAGICAL<br />CREATURES</h3>
