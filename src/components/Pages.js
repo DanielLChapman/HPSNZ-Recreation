@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import Devil from '../pages/Devil';
 import Pidwidgeon from '../pages/Pidwidgeon';
 
-export default class Article extends Component {
+export default class Pages extends Component {
 	linkClick = () => {
 
 	}

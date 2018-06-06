@@ -11,7 +11,14 @@ export default class Toad extends Component {
 	componentDidMount() {
 		setTimeout(
 			window.startStar, 500);
+		setTimeout(function() {
+			var y = document.getElementsByClassName('journal-flex-all');
+			Array.prototype.forEach.call(y, (x) => {
+				x.classList.add('image-container-container-active');
+			});
+		}, 500); 
 	}
+
 	handleClick = (type) => {
 		let t = document.getElementsByClassName('journal-flex-div');
 

@@ -1236,41 +1236,41 @@ article a {
 .fun-content {
   overflow: hidden;
 }
-.huh-content {
+.toadlike-content {
   background: transparent !important;
   margin-top: -200px;
   width: 100% !important;
 }
 @media screen and (max-height: 750px) {
-  .huh-content {
+  .toadlike-content {
     margin-top: 100px;
   }
 }
 @media screen and (max-height: 400px) {
-  .huh-content {
+  .toadlike-content {
     margin-top: 30px;
   }
 }
-.huh-content .toad-article {
+.toadlike-content .toad-article {
   width: calc(100% - 130px);
   background: transparent;
 }
 @media screen and (max-height: 750px) {
-  .huh-content .toad-article {
+  .toadlike-content .toad-article {
     margin-top: -100px;
   }
 }
 @media screen and (max-height: 400px) {
-  .huh-content .toad-article {
+  .toadlike-content .toad-article {
     margin-top: -30px;
   }
 }
 @media screen and (max-width: 1024px) {
-  .huh-content .toad-article {
+  .toadlike-content .toad-article {
     width: 100%;
   }
 }
-.huh-content .toad-article .article-top-nav-name {
+.toadlike-content .toad-article .article-top-nav-name {
   left: 5%;
   position: relative;
   margin-right: 60px;
@@ -1283,7 +1283,7 @@ article a {
   cursor: pointer;
   z-index: 11;
 }
-.huh-content .toad-article .article-top-nav-name:after {
+.toadlike-content .toad-article .article-top-nav-name:after {
   content: "";
   width: 0%;
   -webkit-transition: 1s;
@@ -1293,24 +1293,24 @@ article a {
   left: 50%;
   border-top: 1px solid #fd8c3f;
 }
-.huh-content .toad-article .article-top-nav-name:hover:after {
+.toadlike-content .toad-article .article-top-nav-name:hover:after {
   width: 100%;
   left: 0;
 }
-.huh-content .toad-article .fullsize,
-.huh-content .toad-article .fullsize-journal {
+.toadlike-content .toad-article .fullsize,
+.toadlike-content .toad-article .fullsize-journal {
   padding-top: 150px;
   background: transparent !important;
 }
-.huh-content .toad-article .fullsize .article-information,
-.huh-content .toad-article .fullsize-journal .article-information {
+.toadlike-content .toad-article .fullsize .article-information,
+.toadlike-content .toad-article .fullsize-journal .article-information {
   z-index: 5;
   margin-top: -130px !important;
 }
-.huh-content .toad-article .journal-flex-div {
+.toadlike-content .toad-article .journal-flex-div {
   display: none;
 }
-.huh-content .toad-article .journal-flex-div .image-container {
+.toadlike-content .toad-article .journal-flex-div .image-container {
   width: 80%;
   height: auto;
   z-index: -1;
@@ -1319,7 +1319,7 @@ article a {
   background: transparent;
   overflow: hidden;
 }
-.huh-content .toad-article .journal-flex-div .image-container .image-container-image {
+.toadlike-content .toad-article .journal-flex-div .image-container .image-container-image {
   opacity: 1;
   width: 100%;
   height: auto;
@@ -1331,10 +1331,10 @@ article a {
   -webkit-animation: 1.3s opacity;
           animation: 1.3s opacity;
 }
-.huh-content .toad-article .journal-flex-div .image-container .image-container-image img {
+.toadlike-content .toad-article .journal-flex-div .image-container .image-container-image img {
   visibility: hidden;
 }
-.huh-content .toad-article .journal-flex-div .image-container .image-container-slider {
+.toadlike-content .toad-article .journal-flex-div .image-container .image-container-slider {
   width: 140%;
   height: 140%;
   position: absolute;
@@ -1353,7 +1353,7 @@ article a {
   -webkit-transform: rotate(-10deg);
           transform: rotate(-10deg);
 }
-.huh-content .toad-article .journal-flex-div .image-container .image-container-slider-2 {
+.toadlike-content .toad-article .journal-flex-div .image-container .image-container-slider-2 {
   width: 140%;
   height: 140%;
   position: absolute;
@@ -1374,42 +1374,42 @@ article a {
   -webkit-transform: rotate(-10deg);
           transform: rotate(-10deg);
 }
-.huh-content .toad-article .journal-flex-div .image-container .image-container-butterflies {
+.toadlike-content .toad-article .journal-flex-div .image-container .image-container-butterflies {
   background: url("/images/butterflies.jpeg");
 }
-.huh-content .toad-article .journal-flex-div .image-container .image-container-fire-exposure {
+.toadlike-content .toad-article .journal-flex-div .image-container .image-container-fire-exposure {
   background: url("/images/fire-exposure.jpeg");
 }
-.huh-content .toad-article .journal-flex-div .image-container .image-container-light-book {
+.toadlike-content .toad-article .journal-flex-div .image-container .image-container-light-book {
   background: url("/images/light-book.jpeg");
 }
-.huh-content .toad-article .journal-flex-div .image-container .image-container-wood-map {
+.toadlike-content .toad-article .journal-flex-div .image-container .image-container-wood-map {
   background: url("/images/wood-map.jpeg");
 }
-.huh-content .toad-article .journal-flex-div .image-container .image-container-fire {
+.toadlike-content .toad-article .journal-flex-div .image-container .image-container-fire {
   background: url("/images/fire.jpeg");
 }
-.huh-content .toad-article .journal-flex-div .image-container .image-container-sparks {
+.toadlike-content .toad-article .journal-flex-div .image-container .image-container-sparks {
   background: url("/images/sparks.jpeg");
 }
-.huh-content .toad-article .journal-flex-div .image-container .image-container-smoke {
+.toadlike-content .toad-article .journal-flex-div .image-container .image-container-smoke {
   background: url("/images/smoke.jpeg");
 }
-.huh-content .toad-article .image-container-container-active {
+.toadlike-content .toad-article .image-container-container-active {
   display: block;
 }
-.huh-content .toad-article .image-container-container-active .image-container {
+.toadlike-content .toad-article .image-container-container-active .image-container {
   display: block;
 }
-.huh-content .toad-article .image-container-container-active .image-container .image-container-image {
+.toadlike-content .toad-article .image-container-container-active .image-container .image-container-image {
   -webkit-animation: 1.3s opacity;
           animation: 1.3s opacity;
 }
-.huh-content .toad-article .image-container-container-active .image-container .image-container-slider {
+.toadlike-content .toad-article .image-container-container-active .image-container .image-container-slider {
   -webkit-animation: 1s slideUp;
           animation: 1s slideUp;
 }
-.huh-content .toad-article .image-container-container-active .image-container .image-container-slider-2 {
+.toadlike-content .toad-article .image-container-container-active .image-container .image-container-slider-2 {
   -webkit-animation: 1s slideUp;
           animation: 1s slideUp;
   -webkit-animation-delay: 0.5s;

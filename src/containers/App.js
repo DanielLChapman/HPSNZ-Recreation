@@ -6,7 +6,7 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 
 import Home from '../components/Home';
-import Article from '../components/Article';
+import Pages from '../components/Pages';
 
 import Toad from '../pages/Toad';
 import Stars from '../components/Stars';
@@ -90,9 +90,9 @@ class App extends Component {
 
   render() {
     var videoOverlayText, videoOverlayHighlight, content = <Home />, videoToUse;
-    content = <Article parameters={this.props.match.params.paramters} />
+    content = <Pages parameters={this.props.match.params.paramters} />
     switch(this.props.match.params.paramters) {
-      case "what": 
+      case "devil": 
         videoOverlayText = "Devil’s Snare";
         videoOverlayHighlight = 
           <Fragment>
@@ -103,7 +103,7 @@ class App extends Component {
         videoToUse =  <Video ref={this.video} video="Grasp" burst={this.state.burst} />
 
         break;
-      case "how":
+      case "pigwidgeon":
         videoOverlayText = "Pigwidgeon";
         videoOverlayHighlight = 
           <Fragment>
@@ -113,7 +113,7 @@ class App extends Component {
           </Fragment>
         videoToUse =  <Video ref={this.video} video="Rolling" burst={this.state.burst} />
         break;
-      case "huh":
+      case "toadlike":
         videoOverlayText = "Toad-like smile";
         videoOverlayHighlight = 
           <Fragment>

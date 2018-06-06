@@ -36,13 +36,13 @@ class Nav extends Component {
 							<NavLink onClick={(e) => {this.linkClick(e, '/')}} to="/"><h3>Home</h3></NavLink>
 						</li>	
 						<li>
-							<NavLink onClick={(e) => {this.linkClick(e, '/')}} to="/what"><h3>Devil's Snare</h3></NavLink>
+							<NavLink onClick={(e) => {this.linkClick(e, '/')}} to="/devil"><h3>Devil's Snare</h3></NavLink>
 						</li>
 						<li>
-							<NavLink onClick={(e) => {this.linkClick(e, '/how')}} to="/how"><h3>Pidwidgeon</h3></NavLink>
+							<NavLink onClick={(e) => {this.linkClick(e, '/how')}} to="/pidwidgeon"><h3>Pidwidgeon</h3></NavLink>
 						</li>
 						<li>
-							<NavLink onClick={(e) => {this.linkClick(e, '/')}} to="/huh"><h3>Toad-Like Smike</h3></NavLink>
+							<NavLink onClick={(e) => {this.linkClick(e, '/')}} to="/toadlike"><h3>Toad-Like Smile</h3></NavLink>
 						</li>
 					</TransitionGroup>
 				</div>
@@ -61,9 +61,9 @@ class Nav extends Component {
 							<div className="overflow-container">
 								<ul>
 									<li className="home-nav-link"><NavLink onClick={() => {this.mobileClick()}} to="/"><h1>Home</h1></NavLink></li>	
-									<li><NavLink onClick={() => {this.mobileClick()}} to="/what"><h1>Devil's Snare</h1></NavLink></li>
-									<li><NavLink onClick={() => {this.mobileClick()}} to="/how"><h1>Pidwidgeon</h1></NavLink></li>
-									<li><NavLink onClick={() => {this.mobileClick()}} to="/huh"><h1>Toad-Like Smike</h1></NavLink></li>
+									<li><NavLink onClick={() => {this.mobileClick()}} to="/devil"><h1>Devil's Snare</h1></NavLink></li>
+									<li><NavLink onClick={() => {this.mobileClick()}} to="/pidwidgeon"><h1>Pidwidgeon</h1></NavLink></li>
+									<li><NavLink onClick={() => {this.mobileClick()}} to="/toadlike"><h1>Toad-Like Smike</h1></NavLink></li>
 								</ul>
 							</div>
 						</section>
