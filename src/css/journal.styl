@@ -1,0 +1,122 @@
+.journal-header {
+	.video-overlay {
+		width: 55%;
+		left: 5%;
+		h4 {
+			font-size: 14px;
+			font-wieght: 400;
+			letter-spacing: .24em;
+			font-family: Space Mono,monospace;
+			color: white;
+			padding-left: 10px;
+			display: block;
+		}
+		h1 span {
+			color: light-font-color;
+			    line-height: 1.17143;
+			    letter-spacing: .2em;
+			background: transparent; 
+		}
+	}
+}
+.journal-content {
+	.article-top-nav {
+		.article-top-nav-name {
+			color: light-grey;
+		}
+		.article-top-nav-home-home {
+			&:before {
+				width: 37px !important;
+			}
+			&:hover {
+				&:before {
+					content: "";
+					display: block;
+					transition: 1s;
+					position: relative;
+					top: 30px;
+					border-bottom: 1px solid dark-font-color;
+					width: 0% !important;
+					left: 20%;
+				}
+			}
+		}
+		.article-top-nav-home-journal {
+			&:hover {
+				&:before {
+					content: "";
+					display: block;
+					transition: 1s;
+					position: relative;
+					top: 30px;
+					border-bottom: 1px solid dark-font-color;
+					width: 0% !important;
+					left: 40%;
+				}
+			}
+		}
+		a {
+			&:before {
+				content: "";
+				display: block;
+				transition: 1s;
+				position: relative;
+				top: 30px;
+				border-bottom: 1px solid dark-font-color;
+				width: 75%;
+				left: 0;
+			}
+			
+		}
+		@media screen and (max-width: 827px) {
+			.article-top-nav-name {
+				display: none;
+			}
+			a:nth-child(2) {
+				&:after {
+					content: "";
+				}
+			}
+		}
+	}	
+	.medium-image {
+		width: 100%;
+		padding-top: 10vw;
+		.medium-image-container {
+			width: 100%;
+			height: 40vw;
+			background: light-grey-color;
+			img, iframe {
+				width: 80%;
+				position: relative;
+				left: 10%;
+				top: -20vw;
+			}
+			@media screen and (max-width: 646px) {
+				margin-top: 100px;
+			}
+		}
+	}
+	.article-bottom {
+		padding-top: 50px;
+		padding-bottom: 150px;
+		padding-left: 10%;
+		p {
+			    text-shadow: initial;
+			    padding-left: 50px;
+			    width: 650px;
+			    font-size: 16px;
+			    display: block;
+			    line-height: 1.77778;
+			    color: #474747;
+			    font-family: 'Roboto', sans-serif;
+			    font-weight: 300;
+		}
+		.quote {
+			font-size: 18px;
+			color: menu;
+			font-weight: 700;
+			font-family: 'Roboto', sans-serif;
+		}
+	}
+}

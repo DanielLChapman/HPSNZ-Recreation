@@ -12,6 +12,7 @@ article a {
   color: #fd8c3f;
   display: block;
   position: relative;
+  width: 100%;
   left: 5vw;
   font-family: 'Space Mono', monospace;
   font-size: 13px;
@@ -185,6 +186,16 @@ article a {
 }
 .article-title-header .article-title-header-right ul li {
   margin-bottom: 15px;
+  color: #2d2d2d;
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.1em;
+  font-size: 14px;
+  margin: 0 0 10px;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+.article-title-header .article-title-header-right ul li:hover {
+  color: #fd8c3f;
 }
 .article-title-header .article-title-header-right ul li:before {
   content: "";
@@ -196,18 +207,6 @@ article a {
   left: 0;
   display: inline-block;
   margin-right: 15px;
-}
-.article-title-header .article-title-header-right ul li a {
-  color: #2d2d2d;
-  font-family: 'Space Mono', monospace;
-  letter-spacing: 0.1em;
-  font-size: 14px;
-  margin: 0 0 10px;
-  -webkit-transition: 2s;
-  transition: 2s;
-}
-.article-title-header .article-title-header-right ul li a:hover {
-  color: #fd8c3f;
 }
 .article-title-header .article-title-header-right .article-title-header-right-media {
   height: auto;
@@ -1467,6 +1466,115 @@ article a {
     background-position: 100% 0%;
   }
 }
+.journal-header .video-overlay {
+  width: 55%;
+  left: 5%;
+}
+.journal-header .video-overlay h4 {
+  font-size: 14px;
+  font-wieght: 400;
+  letter-spacing: 0.24em;
+  font-family: Space Mono, monospace;
+  color: #fff;
+  padding-left: 10px;
+  display: block;
+}
+.journal-header .video-overlay h1 span {
+  color: #fdfdfd;
+  line-height: 1.17143;
+  letter-spacing: 0.2em;
+  background: transparent;
+}
+.journal-content .article-top-nav .article-top-nav-name {
+  color: #d1d1d1;
+}
+.journal-content .article-top-nav .article-top-nav-home-home:before {
+  width: 37px !important;
+}
+.journal-content .article-top-nav .article-top-nav-home-home:hover:before {
+  content: "";
+  display: block;
+  -webkit-transition: 1s;
+  transition: 1s;
+  position: relative;
+  top: 30px;
+  border-bottom: 1px solid #2d2d2d;
+  width: 0% !important;
+  left: 20%;
+}
+.journal-content .article-top-nav .article-top-nav-home-journal:hover:before {
+  content: "";
+  display: block;
+  -webkit-transition: 1s;
+  transition: 1s;
+  position: relative;
+  top: 30px;
+  border-bottom: 1px solid #2d2d2d;
+  width: 0% !important;
+  left: 40%;
+}
+.journal-content .article-top-nav a:before {
+  content: "";
+  display: block;
+  -webkit-transition: 1s;
+  transition: 1s;
+  position: relative;
+  top: 30px;
+  border-bottom: 1px solid #2d2d2d;
+  width: 75%;
+  left: 0;
+}
+@media screen and (max-width: 827px) {
+  .journal-content .article-top-nav .article-top-nav-name {
+    display: none;
+  }
+  .journal-content .article-top-nav a:nth-child(2):after {
+    content: "";
+  }
+}
+.journal-content .medium-image {
+  width: 100%;
+  padding-top: 10vw;
+}
+.journal-content .medium-image .medium-image-container {
+  width: 100%;
+  height: 40vw;
+  background: #f6f6f6;
+}
+.journal-content .medium-image .medium-image-container img,
+.journal-content .medium-image .medium-image-container iframe {
+  width: 80%;
+  position: relative;
+  left: 10%;
+  top: -20vw;
+}
+@media screen and (max-width: 646px) {
+  .journal-content .medium-image .medium-image-container {
+    margin-top: 100px;
+  }
+}
+.journal-content .article-bottom {
+  padding-top: 50px;
+  padding-bottom: 150px;
+  padding-left: 10%;
+}
+.journal-content .article-bottom p {
+  text-shadow: initial;
+  padding-left: 50px;
+  width: 650px;
+  font-size: 16px;
+  display: block;
+  line-height: 1.77778;
+  color: #474747;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+.journal-content .article-bottom .quote {
+  font-size: 18px;
+  color: #333;
+  font-weight: 700;
+  font-family: 'Roboto', sans-serif;
+}
 #follower {
   position: absolute;
   top: 0%;
@@ -1803,8 +1911,17 @@ body {
   min-height: calc(100vh + 35px);
   padding: 0;
   margin: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   width: 100%;
+}
+.journal-header {
+  position: relative;
+  height: 600px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+  background: transparent;
 }
 .wrapper {
   position: absolute;
@@ -2570,17 +2687,22 @@ body {
   width: 100%;
   height: auto;
 }
+.content .fullsize-journal .journal-flex .journal-flex-div a,
 .content .fullsize-journal .journal-flex .journal-flex-div .tag-main,
 .content .fullsize-journal .journal-flex .journal-flex-div .tag-hidden {
   float: left;
   left: 35px;
+  display: block;
+  cursor: pointer;
   top: 10px;
 }
-.content .fullsize-journal .journal-flex .journal-flex-div .tag-main:hover ~ .tag-hidden {
+.content .fullsize-journal .journal-flex .journal-flex-div a:hover ~ .tag-hidden {
   left: -65px;
   top: 50px;
+  opacity: 1;
 }
 .content .fullsize-journal .journal-flex .journal-flex-div .tag-hidden {
+  border: 1px solid #fff;
   left: -85px;
   top: 30px;
 }
@@ -2600,6 +2722,7 @@ body {
   font-weight: 400;
   text-shadow: 0 0 10px #000;
   margin-top: -5px;
+  text-transform: uppercase;
 }
 .content .fullsize-journal .journal-flex .journal-flex-div .article-information span {
   width: 20px;
@@ -2945,8 +3068,17 @@ body {
   min-height: calc(100vh + 35px);
   padding: 0;
   margin: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   width: 100%;
+}
+.journal-header {
+  position: relative;
+  height: 600px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+  background: transparent;
 }
 .wrapper {
   position: absolute;
@@ -3712,17 +3844,22 @@ body {
   width: 100%;
   height: auto;
 }
+.content .fullsize-journal .journal-flex .journal-flex-div a,
 .content .fullsize-journal .journal-flex .journal-flex-div .tag-main,
 .content .fullsize-journal .journal-flex .journal-flex-div .tag-hidden {
   float: left;
   left: 35px;
+  display: block;
+  cursor: pointer;
   top: 10px;
 }
-.content .fullsize-journal .journal-flex .journal-flex-div .tag-main:hover ~ .tag-hidden {
+.content .fullsize-journal .journal-flex .journal-flex-div a:hover ~ .tag-hidden {
   left: -65px;
   top: 50px;
+  opacity: 1;
 }
 .content .fullsize-journal .journal-flex .journal-flex-div .tag-hidden {
+  border: 1px solid #fff;
   left: -85px;
   top: 30px;
 }
@@ -3742,6 +3879,7 @@ body {
   font-weight: 400;
   text-shadow: 0 0 10px #000;
   margin-top: -5px;
+  text-transform: uppercase;
 }
 .content .fullsize-journal .journal-flex .journal-flex-div .article-information span {
   width: 20px;

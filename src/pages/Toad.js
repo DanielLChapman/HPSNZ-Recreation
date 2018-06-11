@@ -1,5 +1,7 @@
 import React, {Component, Fragment} from 'react';
 
+import { NavLink } from 'react-router-dom';
+
 export default class Toad extends Component {
 	constructor(props) {
 		super(props);
@@ -17,6 +19,10 @@ export default class Toad extends Component {
 				x.classList.add('image-container-container-active');
 			});
 		}, 500); 
+	}
+
+	mobileClick = () => {
+		this.props.mobileClick()
 	}
 
 	handleClick = (type) => {
@@ -59,9 +65,9 @@ export default class Toad extends Component {
 								</div> 
 								<div className="article-information">
 									<h6>MAY 2018 <span></span> ARTICLES</h6>
-									<h3>MAGICAL<br />CREATURES</h3>
+									<h3>Alohamora<br />wand</h3>
 								</div>
-								<button className="article-button-main tag-main">Read Article</button>
+								<NavLink onClick={() => {this.mobileClick()}} to="/journal-entries/alohamora"><button className="article-button-main tag-main">Read Article</button></NavLink>
 								<button className="article-button-hidden tag-hidden"></button>
 							</div>
 							<div className='journal-flex-div journal-flex-div-3 journal-flex-all journal-flex-interviews '>
@@ -76,9 +82,9 @@ export default class Toad extends Component {
 								</div> 
 								<div className="article-information">
 									<h6>MAY 2018 <span></span> INTERVIEWS</h6>
-									<h3>MAGICAL<br />CREATURES</h3>
+									<h3>Windgardium<br />Leviosa</h3>
 								</div>
-								<button className="article-button-main tag-main">Read Article</button>
+								<NavLink onClick={() => {this.mobileClick()}} to="/journal-entries/windgardium_leviosa"><button className="article-button-main tag-main">Read Article</button></NavLink>
 								<button className="article-button-hidden tag-hidden"></button>
 							</div>
 							<div className="journal-flex-div journal-flex-div-3 journal-flex-all journal-flex-recipes ">
@@ -95,7 +101,7 @@ export default class Toad extends Component {
 									<h6>MAY 2018 <span></span> RECIPES</h6>
 									<h3>MAGICAL<br />CREATURES</h3>
 								</div>
-								<button className="article-button-main tag-main">Read Article</button>
+								<NavLink onClick={() => {this.mobileClick()}} to="/journal-entries/magical_creatures"><button className="article-button-main tag-main">Read Article</button></NavLink>
 								<button className="article-button-hidden tag-hidden"></button>
 							</div>
 							<div className="journal-flex-div journal-flex-div-5  journal-flex-all journal-flex-case-studies">
@@ -111,9 +117,9 @@ export default class Toad extends Component {
 
 								<div className="article-information">
 									<h6>MAY 2018 <span></span> ARTICLES</h6>
-									<h3>MAGICAL<br />CREATURES</h3>
+									<h3>Rock<br />Cake</h3>
 								</div>
-								<button className="article-button-main tag-main">Read Article</button>
+								<NavLink onClick={() => {this.mobileClick()}} to="/journal-entries/alohamora"><button className="article-button-main tag-main">Read Article</button></NavLink>
 								<button className="article-button-hidden tag-hidden"></button>
 							</div>
 							<div className="journal-flex-div journal-flex-div-1 journal-flex-all journal-flex-interviews ">
@@ -129,9 +135,9 @@ export default class Toad extends Component {
 								
 								<div className="article-information">
 									<h6>MAY 2018 <span></span> INTERVIEWS</h6>
-									<h3>MAGICAL<br />CREATURES</h3>
+									<h3>BAsilisk<br />Venom</h3>
 								</div>
-								<button className="article-button-main tag-main">Read Article</button>
+								<NavLink onClick={() => {this.mobileClick()}} to="/journal-entries/alohamora"><button className="article-button-main tag-main">Read Article</button></NavLink>
 								<button className="article-button-hidden tag-hidden"></button>
 							</div>
 							<div className="journal-flex-div journal-flex-div-2 journal-flex-all journal-flex-articles">
@@ -147,9 +153,9 @@ export default class Toad extends Component {
 
 								<div className="article-information">
 									<h6>MAY 2018 <span></span> ARTICLES</h6>
-									<h3>MAGICAL<br />CREATURES</h3>
+									<h3>Fawkes<br />Maze</h3>
 								</div>
-								<button className="article-button-main tag-main">Read Article</button>
+								<NavLink onClick={() => {this.mobileClick()}} to="/journal-entries/windgardium_leviosa"><button className="article-button-main tag-main">Read Article</button></NavLink>
 								<button className="article-button-hidden tag-hidden"></button>
 							</div>
 							<div className="journal-flex-div journal-flex-div-2 journal-flex-all journal-flex-articles">
@@ -165,9 +171,9 @@ export default class Toad extends Component {
 
 								<div className="article-information">
 									<h6>MAY 2018 <span></span> ARTICLES</h6>
-									<h3>MAGICAL<br />CREATURES</h3>
+									<h3>Goblin<br />Wars</h3>
 								</div>
-								<button className="article-button-main tag-main">Read Article</button>
+								<NavLink onClick={() => {this.mobileClick()}} to="/journal-entries/windgardium_leviosa"><button className="article-button-main tag-main">Read Article</button></NavLink>
 								<button className="article-button-hidden tag-hidden"></button>
 							</div>
 						</section>

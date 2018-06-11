@@ -121,7 +121,7 @@ class App extends Component {
             <span>And</span> 
             <span>Blotts</span> 
           </Fragment>
-        content = <Toad />
+        content = <Toad mobileClick={this.mobileClick} />
         videoToUse = <Stars />
         break;
       default: 
