@@ -100,10 +100,10 @@ class App extends Component {
             <span>Love</span> 
             <span>Potion</span> 
           </Fragment>
-        videoToUse =  <Video ref={this.video} video="Grasp" burst={this.state.burst} />
+        videoToUse =  <Video ref={this.video} video="Black-3" burst={this.state.burst} />
 
         break;
-      case "pigwidgeon":
+      case "pidwidgeon":
         videoOverlayText = "Pigwidgeon";
         videoOverlayHighlight = 
           <Fragment>
@@ -111,7 +111,7 @@ class App extends Component {
             <span>Phoenix</span> 
             <span>Feather</span> 
           </Fragment>
-        videoToUse =  <Video ref={this.video} video="Rolling" burst={this.state.burst} />
+        videoToUse =  <Video ref={this.video} video="Wand-3" burst={this.state.burst} />
         break;
       case "toadlike":
         videoOverlayText = "Toad-like smile";
@@ -132,8 +132,9 @@ class App extends Component {
             <span>Night</span> 
             <span>Powder</span> 
           </Fragment>
-          videoToUse =  <Video ref={this.video} video="Hand-test" burst={this.state.burst} />
-
+          videoToUse =  <Video ref={this.video} video="Push-4" burst={this.state.burst} />
+//Black-3
+//Wand-3
         content = <Home />
     }
     var transition;

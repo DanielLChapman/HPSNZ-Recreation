@@ -14,11 +14,11 @@ export default class Pages extends Component {
 		let name = "";
 		var page;
 		switch(this.props.parameters) {
-			case "what":
+			case "devil":
 				name = "Devil's Snare";
 				page = <Devil />
 				break;
-			case "how":
+			case "pidwidgeon":
 				name= "Pidwidgeon";
 				page = <Pidwidgeon />;
 				break;
