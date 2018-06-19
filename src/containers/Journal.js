@@ -70,10 +70,10 @@ class Journal extends Component {
 
   render() {
     var content;
-    let data = fakabase[this.props.match.params.paramters];
+    let data = fakabase['articles'][this.props.match.params.paramters];
 
     if (!data) {
-      data = fakabase['alohamora'];
+      data = fakabase['articles']['alohamora'];
     }
     var videoOverlayText = `${data.uploadedAt}, ${data.type}`, videoOverlayHighlight = data.topTitle;
 

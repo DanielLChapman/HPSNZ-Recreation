@@ -1,7 +1,56 @@
 import React, {Component, Fragment} from 'react';
 import { NavLink } from 'react-router-dom';
 
+import {fakabase} from '../data/fakabase';
+
+var interval, counter = 1;
+
 export default class Home extends Component {
+
+	switchInformation = (count) => {
+		if (count > 7) {
+			count = 1;
+		}
+		counter = count;
+		
+		let data = fakabase["home_page_data"][counter];
+		var tempToUse;
+		// update image-slider > img 
+		tempToUse = document.querySelector('.fullsize-2 > .image-slider > img');
+		tempToUse.src = data.image;
+		//update background
+		setTimeout(function() {
+			tempToUse = document.querySelector('.fullsize-2');
+			tempToUse.style.backgroundImage = data.background_image;
+		}, 0);
+		//Update header > h5
+		tempToUse = document.querySelector('.fullsize-2 > header > h5');
+		tempToUse.innerHTML = data.top_header;
+		// Update header > h1
+		tempToUse = document.querySelector('.fullsize-2 > header > h1');
+		tempToUse.innerHTML = data.main_header;
+		// update tag-line > p
+		tempToUse = document.querySelector('.fullsize-2 > .tag-line > p > span');
+		tempToUse.innerHTML = data.tag;
+		//update image-slider > li active class 
+		tempToUse = document.querySelector('.image-slider-li-active');
+		tempToUse.classList.remove('image-slider-li-active');
+		tempToUse = document.querySelector('.image-slider > ul li:nth-child('+(counter)+')');
+		tempToUse.classList.add('image-slider-li-active');
+	}
+
+	componentDidMount() {
+		this.switchInformation(counter);
+		interval = setInterval(
+			() => {
+				counter++;
+				this.switchInformation(counter);
+			}, 5000);
+  	}
+
+  	componentWillUnmount() {
+ 	   clearInterval(interval);
+  	}
 
 	render() {
 		return (
@@ -44,12 +93,22 @@ export default class Home extends Component {
 						</div>
 					</header>
 					<section className="tag-line">
-						<p>Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup. <br />
+						<p><span className="tag-line-text">Toad-like smile Flourish and Blotts he knew I’d come back Quidditch World Cup.</span> <br />
 						<button>Learn More</button>
 						<button className="tag-hidden"></button>
 						</p>
 					</section>
 					<section className="image-slider">
+						<img src="./images/smoke.jpeg" alt="" />
+						<ul>
+							<li className="image-slider-li-active" onClick={() => {this.switchInformation(1)}}></li>
+							<li onClick={() => {this.switchInformation(2)}}></li>
+							<li onClick={() => {this.switchInformation(3)}}></li>
+							<li onClick={() => {this.switchInformation(4)}}></li>
+							<li onClick={() => {this.switchInformation(5)}}></li>
+							<li onClick={() => {this.switchInformation(6)}}></li>
+							<li onClick={() => {this.switchInformation(7)}}></li>
+						</ul>
 					</section>
 					<div className="lines">
 			          <div></div>
