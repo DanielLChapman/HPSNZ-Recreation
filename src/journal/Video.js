@@ -42,7 +42,7 @@ export default class Video extends Component {
 				</section>
 				<section className="medium-image medium-video">
 					<div className="medium-image-container medium-video-container">
-						<iframe src={templateData.center_media.src} frameBorder="0" allow="autoplay; encrypted-media" title="Harry Potter" allowFullScreen></iframe>
+						<iframe src={templateData.center_media.src} frameBorder="0" allowFullScreen title="Harry Potter"></iframe>
 					</div>
 				</section>
 

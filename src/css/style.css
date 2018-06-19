@@ -1548,6 +1548,10 @@ article a {
   left: 10%;
   top: -20vw;
 }
+.journal-content .medium-image .medium-image-container iframe {
+  height: auto;
+  min-height: 50vw;
+}
 @media screen and (max-width: 646px) {
   .journal-content .medium-image .medium-image-container {
     margin-top: 100px;

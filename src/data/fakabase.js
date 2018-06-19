@@ -61,7 +61,7 @@ export const fakabase = {
 			article_right_li: ["", "", ""],
 			center_media: {
 				type: "video",
-				src: "https://www.youtube.com/watch?v=Htaj3o3JD8I",
+				src: "https://www.youtube.com/embed/Htaj3o3JD8I",
 				tag: "Anna Skipper | Performance Physiologist (HPSNZ)"
 			}
 		}
