@@ -89,9 +89,14 @@ class App extends Component {
   }
 
   render() {
-    var videoOverlayText, videoOverlayHighlight, content = <Home />, videoToUse;
-    content = <Pages parameters={this.props.match.params.paramters} />
-    switch(this.props.match.params.paramters) {
+    var videoOverlayText, videoOverlayHighlight, content = <Home />, videoToUse, urlParams;
+    try {
+      urlParams = this.props.match.params.paramters 
+    } catch(err) {
+      urlParams = "";
+    }  
+    content = <Pages parameters={urlParams} />
+    switch(urlParams) {
       case "devil": 
         videoOverlayText = "Devil’s Snare";
         videoOverlayHighlight = 
@@ -160,7 +165,7 @@ class App extends Component {
             <div></div>
           </div>
         </header>
-        <section className={`content ${this.props.match.params.paramters}-content`}>
+        <section className={`content ${urlParams}-content`}>
           {content}
         </section>
         <Footer />

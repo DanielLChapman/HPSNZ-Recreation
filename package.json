@@ -17,6 +17,7 @@
   "dependencies": {
     "animejs": "^2.2.0",
     "autoprefixer-stylus": "0.14.0",
+    "canvas-prebuilt": "^1.6.5-prerelease.1",
     "flickity": "^2.1.1",
     "prop-types": "^15.6.0",
     "re-base": "3.2.2",

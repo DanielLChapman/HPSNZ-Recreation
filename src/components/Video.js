@@ -60,10 +60,15 @@ import React, {Component} from 'react';
 				if(typeof navigator.getUserMedia !== 'function') {
 					return logError((el.innerHTML = 'Error: browser does not support WebRTC'));
 				}
-				navigator.getUserMedia({video: true, audio: false}, function(localMediaStream){
-					self.mediaStream = localMediaStream;
-					el.src = (window.URL || window.webkitURL).createObjectURL(localMediaStream);
-				}, logError);
+				try {
+					navigator.getUserMedia({video: true, audio: false}, function(localMediaStream){
+						self.mediaStream = localMediaStream;
+						el.src = (window.URL || window.webkitURL).createObjectURL(localMediaStream);
+					}, logError);
+				}
+				catch (err) {
+					
+				}
 			}
 			el.addEventListener('loadeddata', function() { self.play(); });
 		}

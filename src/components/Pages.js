@@ -23,8 +23,8 @@ export default class Pages extends Component {
 				page = <Pidwidgeon />;
 				break;
 			default: 
-				page = <Devil />
-				name = "butt";
+				page = <Toad />
+				name = "Toad";
 		}
 		return (
 			<Fragment>
