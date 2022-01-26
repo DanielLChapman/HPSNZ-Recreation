@@ -63,7 +63,6 @@ class Nav extends Component {
 									<li className="home-nav-link"><NavLink onClick={() => {this.mobileClick()}} to="/"><h1>Home</h1></NavLink></li>	
 									<li><NavLink onClick={() => {this.mobileClick()}} to="/devil"><h1>Devil's Snare</h1></NavLink></li>
 									<li><NavLink onClick={() => {this.mobileClick()}} to="/pidwidgeon"><h1>Pidwidgeon</h1></NavLink></li>
-									<li><NavLink onClick={() => {this.mobileClick()}} to="/toadlike"><h1>Toad-Like Smike</h1></NavLink></li>
 								</ul>
 							</div>
 						</section>

@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import Devil from '../pages/Devil';
 import Pidwidgeon from '../pages/Pidwidgeon';
+import Toad from '../pages/Toad';
 
 export default class Pages extends Component {
 	linkClick = () => {
