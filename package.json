@@ -13,6 +13,9 @@
     "enzyme-adapter-react-16": "^1.15.6",
     "jest": "^27.4.7"
   },
+  "peerDependencies": {
+    "postcss": "^8.0.0"
+},
   "dependencies": {
     "animejs": "^3.2.1",
     "autoprefixer-stylus": "1.0.0",
@@ -25,7 +28,8 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.0",
-    "react-transition-group": "^4.4.2"
+    "react-transition-group": "^4.4.2",
+    "stylus": "^0.56.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -36,5 +40,8 @@
     "styles:watch": "stylus -u autoprefixer-stylus -w ./src/css/style.styl -o ./src/css/style.css",
     "test": "jest",
     "test:watch": "jest --watch"
-  }
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }

@@ -1022,34 +1022,34 @@ article a {
 }
 .flickity-doors .carousel .carousel-cell:nth-child(1) {
   margin-left: 0;
-  background: url("/images/2-in-forest.jpg") no-repeat center center;
+  background: url("./images/2-in-forest.jpg") no-repeat center center;
 }
 .flickity-doors .carousel .carousel-cell:nth-child(2) {
   background: #800080;
-  background: url("/images/butterflies.jpeg") no-repeat center center;
+  background: url("./images/butterflies.jpeg") no-repeat center center;
   background-size: cover;
 }
 .flickity-doors .carousel .carousel-cell:nth-child(3) {
   background: #800080;
-  background: url("/images/face-glow.jpg") no-repeat center center;
+  background: url("./images/face-glow.jpg") no-repeat center center;
 }
 .flickity-doors .carousel .carousel-cell:nth-child(4) {
   background: #800080;
-  background: url("/images/fire-exposure.jpeg") no-repeat center center;
+  background: url("./images/fire-exposure.jpeg") no-repeat center center;
   background-size: cover;
 }
 .flickity-doors .carousel .carousel-cell:nth-child(5) {
   background: #800080;
-  background: url("/images/light-blur.jpg") no-repeat center center;
+  background: url("./images/light-blur.jpg") no-repeat center center;
 }
 .flickity-doors .carousel .carousel-cell:nth-child(6) {
   background: #800080;
-  background: url("/images/smoke.jpeg") no-repeat center center;
+  background: url("./images/smoke.jpeg") no-repeat center center;
   background-size: cover;
 }
 .flickity-doors .carousel .carousel-cell:nth-child(7) {
   background: #800080;
-  background: url("/images/man_light.png") no-repeat center center;
+  background: url("./images/man_light.png") no-repeat center center;
 }
 .flickity-doors .carousel .carousel-cell .carousel-cell-content {
   width: 100%;
@@ -1374,25 +1374,25 @@ article a {
           transform: rotate(-10deg);
 }
 .toadlike-content .toad-article .journal-flex-div .image-container .image-container-butterflies {
-  background: url("/images/butterflies.jpeg");
+  background: url("./images/butterflies.jpeg");
 }
 .toadlike-content .toad-article .journal-flex-div .image-container .image-container-fire-exposure {
-  background: url("/images/fire-exposure.jpeg");
+  background: url("./images/fire-exposure.jpeg");
 }
 .toadlike-content .toad-article .journal-flex-div .image-container .image-container-light-book {
-  background: url("/images/light-book.jpeg");
+  background: url("./images/light-book.jpeg");
 }
 .toadlike-content .toad-article .journal-flex-div .image-container .image-container-wood-map {
-  background: url("/images/wood-map.jpeg");
+  background: url("./images/wood-map.jpeg");
 }
 .toadlike-content .toad-article .journal-flex-div .image-container .image-container-fire {
-  background: url("/images/fire.jpeg");
+  background: url("./images/fire.jpeg");
 }
 .toadlike-content .toad-article .journal-flex-div .image-container .image-container-sparks {
-  background: url("/images/sparks.jpeg");
+  background: url("./images/sparks.jpeg");
 }
 .toadlike-content .toad-article .journal-flex-div .image-container .image-container-smoke {
-  background: url("/images/smoke.jpeg");
+  background: url("./images/smoke.jpeg");
 }
 .toadlike-content .toad-article .image-container-container-active {
   display: block;
@@ -2458,7 +2458,7 @@ body {
 .content .fullsize-1 {
   margin-top: 0;
   text-align: right;
-  background-image: url("/images/adult-air.jpg");
+  background-image: url("./images/adult-air.jpg");
 }
 .content .fullsize-1 header {
   left: 40vw;
@@ -2489,7 +2489,7 @@ body {
   }
 }
 .content .fullsize-2 {
-  background-image: url("/images/light-blur.jpg");
+  background-image: url("./images/light-blur.jpg");
   text-align: left;
   height: 105vh;
   min-height: 1100px;
@@ -3690,7 +3690,7 @@ body {
 .content .fullsize-1 {
   margin-top: 0;
   text-align: right;
-  background-image: url("/images/adult-air.jpg");
+  background-image: url("./images/adult-air.jpg");
 }
 .content .fullsize-1 header {
   left: 40vw;
@@ -3721,7 +3721,7 @@ body {
   }
 }
 .content .fullsize-2 {
-  background-image: url("/images/light-blur.jpg");
+  background-image: url("./images/light-blur.jpg");
   text-align: left;
   height: 105vh;
   min-height: 1100px;
