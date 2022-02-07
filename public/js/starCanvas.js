@@ -18,8 +18,15 @@ var widthDivision = 41;
 var starInt = null;
 
 var resize = function() {
-	cw = c.width = document.querySelector('.fun-content').offsetWidth;
-	ch = c.height = document.querySelector('.fun-content').offsetHeight;
+	try {
+		cw = c.width;
+		ch = c.height;
+	} catch (e ) {
+		console.log(e);
+		cw = c.width;
+		ch = c.height;
+	}
+	
 }
 
 var rand = function(a, b) {

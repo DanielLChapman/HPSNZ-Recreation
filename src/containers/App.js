@@ -65,7 +65,12 @@ class App extends Component {
   }
 
   navClick = () => {
-    this.pauseVideo();
+    try {
+      this.pauseVideo();
+    }
+    catch(e) {
+      console.log(e);
+    }
     this.setState({
       burst: true,
       transition: false
@@ -73,7 +78,8 @@ class App extends Component {
   }
 
   mobileClick = () => {
-    this.pauseVideo();
+    
+    
     this.setState({
       burst: false,
       transition: true
@@ -137,7 +143,7 @@ class App extends Component {
             <span>Night</span> 
             <span>Powder</span> 
           </Fragment>
-          videoToUse =  <Video ref={this.video} video="Push-4" burst={this.state.burst} />
+          videoToUse =  <Video ref={this.video} video="Grasp" burst={this.state.burst} />
 //Black-3
 //Wand-3
         content = <Home />

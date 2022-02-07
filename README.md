@@ -4,3 +4,5 @@ For the video to ascii conversion
 
 Uses https://github.com/juliangarnier/anime for burst effect
 Modified https://codepen.io/juliangarnier/pen/JKEgpO to achieve the effect
+
+Recreation of an old version of https://hpsnz.org.nz/ 
